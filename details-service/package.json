@@ -1,0 +1,59 @@
+{
+  "name": "product-details-section",
+  "version": "1.0.0",
+  "description": "This is a product details service for a mock fjallraven.com website",
+  "author": "James C. Hrivnak",
+  "license": "",
+  "engines": {
+    "node": ">=6.13.0"
+  },
+  "scripts": {
+    "start:details": "nodemon ./backend/dist/server/server.js",
+    "build": "webpack",
+    "dev": "webpack serve",
+    "prod": "webpack --mode=production",
+    "login": "bash login.sh"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "chai": "*",
+    "cors": "^2.8.5",
+    "css-modules-require-hook": "^4.2.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mocha": "*",
+    "mysql2": "^2.2.5",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "sequelize": "^6.5.0",
+    "sinon": "^9.2.4",
+    "webpack-combine-loaders": "^2.0.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.1",
+    "@babel/plugin-transform-runtime": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/register": "^7.13.0",
+    "@babel/runtime": "^7.13.10",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.4.1",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.1.0",
+    "enzyme": "^3.11.0",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.2.0",
+    "ignore-styles": "^5.0.1",
+    "jsdom": "16.4.0",
+    "jsdom-global": "3.0.2",
+    "mocha": "^8.3.0",
+    "mocha-jsdom": "^2.0.0",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^11.0.1",
+    "sequelize-cli": "^6.2.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}

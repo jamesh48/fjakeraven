@@ -2,7 +2,7 @@ require("dotenv").config();
 import express from "express";
 const app = express();
 import path from "path";
-import router from './routes';
+import router from "./routes";
 import cors from "cors";
 
 app.use(cors());
@@ -13,14 +13,14 @@ app.use("*", (req, _res, next) => {
     /^\/\d+$/g.test(originalUrl)
       ? console.info("\u001b[1;35m~Serving Client~")
       : /indicator=all/.test(originalUrl)
-      // @ts-ignore
-      ? console.info("Getting Data at " + req.params["0"])
+      ? // @ts-ignore
+        console.info("Getting Data at " + req.params["0"])
       : console.info(method, originalUrl);
   }
   next();
 });
-
-app.use(express.static(path.resolve("client/dist")));
+console.log(path.resolve("frontend/build/public"));
+app.use(express.static(path.resolve("frontend/build/public")));
 
 app.use("/", router);
 

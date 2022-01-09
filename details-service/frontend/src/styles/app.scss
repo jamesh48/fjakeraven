@@ -1,0 +1,535 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  backface-visibility: hidden;
+}
+
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img,
+svg {
+  display: inline-block;
+  max-width: 100%;
+  backface-visibility: hidden;
+}
+
+:root {
+  --fontWeightOne: 700;
+}
+
+@font-face {
+  font-family: "Artic Fox";
+  src: url("../fonts/ArcticFox-Regular.eot");
+  src: url("../fonts/ArcticFox-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/ArcticFox-Regular.woff2") format("woff2"), url("../fonts/ArcticFox-Regular.woff") format("woff"),
+    url("../fonts/ArcticFox-Regular.ttf") format("truetype"),
+    url("../fonts/ArcticFox-Regular.svg#ArcticFox-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Artic Fox Headline";
+  src: url("../fonts/ArcticFox-Headline.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+$screenBreakPoint: 992px;
+
+@mixin font-maker($fontSize: inherit, $lineHeight: inherit, $color: inherit, $fontFamily: inherit) {
+  line-height: $lineHeight;
+  font-size: $fontSize;
+  color: $color;
+  font-family: #{$fontFamily};
+}
+
+@mixin padding-margin($padding: inherit, $margin: inherit) {
+  padding: #{$padding};
+  margin: #{$margin};
+}
+
+body {
+  background-color: #f4f4f4;
+  letter-spacing: 0.03em;
+  text-rendering: geometricPrecision;
+  display: block;
+  @include font-maker(14px, 1.5, #303030, "Artic Fox");
+  font-weight: 100;
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+strong {
+  font-weight: var(--fontWeightOne);
+}
+
+h2 {
+  line-height: 1.1em;
+  margin: 1em 0 0;
+}
+
+h2:first-child {
+  margin-top: 0;
+}
+
+.teaserRoot {
+  padding: 0 20px;
+  position: relative;
+  &:first-child {
+    margin-top: 50px;
+  }
+  @media only screen and (min-width: $screenBreakPoint) {
+    max-width: 1024px;
+    padding: 0 25px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media only screen and (min-width: 1300px) {
+    max-width: 1235px;
+  }
+}
+
+.teaserRoot {
+  .featuresTitle {
+    display: block;
+    @include font-maker(14px, 21px);
+    font-weight: var(--fontWeightOne);
+    text-transform: uppercase;
+  }
+  .shortDescription {
+    @include font-maker(24px, 36px);
+    margin-top: 5px;
+    display: block;
+  }
+}
+
+* + .teaserRoot {
+  margin-top: 30px;
+  @media only screen and (min-width: 768px) {
+    margin-top: 40px;
+  }
+  @media only screen and (min-width: $screenBreakPoint) {
+    margin-top: 80px;
+  }
+}
+
+.featuresRoot {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  & > * + * {
+    margin-top: 15px;
+  }
+  @media only screen and (min-width: $screenBreakPoint) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    & > * + * {
+      margin-top: 0;
+    }
+  }
+  .featuresDescription {
+    @include padding-margin("0 0 30px", 0);
+    @media only screen and (min-width: $screenBreakPoint) {
+      width: 33.33333%;
+      padding: 0 40px 20px 0;
+    }
+  }
+  .features {
+    @include padding-margin(0, "15px 0 0 0");
+    list-style: none;
+    li {
+      position: relative;
+      @include padding-margin("0 0 0 20px", "15px 0 0 0");
+      &:before {
+        position: absolute;
+        top: 7px;
+        left: 0;
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        margin: 2px 15px 2px 0;
+        background-color: #959595;
+        border-radius: 50%;
+        content: "";
+      }
+    }
+  }
+  .featuresSlider {
+    @media only screen and (min-width: $screenBreakPoint) {
+      width: 66.66667%;
+      // border: 1px solid black;
+    }
+    .sliderRoot {
+      position: relative;
+      // border: 1px dashed black;
+      .slider {
+        .sliderViewport {
+          overflow: hidden;
+          position: relative;
+          height: 489.797px;
+          // Inner slider holds the figures
+          .innerSlider {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            .figureRoot {
+              display: block;
+              overflow: hidden;
+              margin: 0;
+            }
+            .figureFeatures {
+              width: 100%;
+              flex-direction: row;
+            }
+          }
+          .arrowButton {
+            position: absolute;
+            border: none;
+            background: hsla(0, 0%, 100%, 0.75);
+          }
+          // button
+          .prevNextButton {
+            width: 80px;
+            height: 80px;
+            padding: 40px;
+            background: transparent;
+            transform: translateY(-50%) rotate(180deg);
+            top: 50%;
+            border-radius: 50%;
+            svg {
+              top: 30%;
+              left: 30%;
+              width: 40%;
+              height: 40%;
+            }
+            .arrow {
+              // pointer-events: none, makes it so that the parent button is the only button that is clicked
+              pointer-events: none;
+              fill: #959595;
+              opacity: 0.8;
+            }
+          }
+          .arrowButtonIcon {
+            // pointer-events: none, makes it so that the parent button is the only button that is clicked
+            pointer-events: none;
+            position: absolute;
+            left: 20%;
+            top: 20%;
+            width: 60%;
+            height: 60%;
+          }
+          .prev {
+            left: 10px;
+            &:disabled {
+              display: none;
+            }
+          }
+          .next {
+            right: 10px;
+            &:disabled {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.teaserRoot {
+  .descriptionTitle {
+    text-transform: uppercase;
+    padding: 20px 0;
+    display: block;
+    font-weight: var(--fontWeightOne);
+    @include font-maker(14px, 21px, inherit) // background-color: red;;;;;
+  }
+  .descriptionContent {
+    padding: 0 0 50px;
+    border-bottom: 1px solid #d6d6d6;
+    @media only screen and (min-width: 992px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    // background-color: lightblue;
+  }
+  .descriptionSpec,
+  .descriptionText,
+  .descriptionItem {
+    line-height: 28px;
+    // background-color: lightpink;
+  }
+}
+
+.descriptionRoot {
+  border-top: 1px solid #d6d6d6;
+}
+
+.description .descriptionText {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.description {
+  @media only screen and (min-width: $screenBreakPoint) {
+    padding-right: 20px;
+  }
+}
+
+.descriptionSpec {
+  @media only screen and (min-width: $screenBreakPoint) {
+    padding-left: 20px;
+  }
+}
+
+.description,
+.descriptionSpec {
+  @media only screen and (min-width: $screenBreakPoint) {
+    width: 50%;
+  }
+}
+
+.pdpArea {
+  margin-top: 40px;
+}
+
+.article {
+  align-items: center;
+  border: none;
+  // Picture Frame
+  .articleMedia {
+    width: 66%;
+    position: relative;
+    z-index: 1;
+    display: block;
+    overflow: hidden;
+    .pictureRoot {
+      position: relative;
+      display: block;
+      overflow: hidden;
+    }
+  }
+  // Text
+  .articleContent {
+    opacity: 1;
+    width: 50%;
+    padding: 0 20px 0 30px;
+    & > * + * {
+      margin-top: 20px;
+    }
+    .articleTitle {
+      text-align: left;
+      font-size: 30px;
+    }
+    .articleExcerpt {
+      @include font-maker(20px, 28px, inherit, "Adobe Caslon W01,serif");
+    }
+  }
+}
+
+.footerRoot {
+  padding: 80px 25px;
+  text-align: left;
+  background-color: #e8e7e6;
+  .footerContainer {
+    @include padding-margin("0 0 0 400px", "0 auto");
+    max-width: 1185px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    position: relative;
+    .footerColumn {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: left;
+      .footerTitle {
+        position: relative;
+        display: block;
+        margin: 0;
+        font-size: 16px;
+        font-weight: var(--fontWeightOne);
+        text-transform: uppercase;
+        user-select: none;
+      }
+      .footerLinks {
+        @include padding-margin(0, "10px 0 0 0") list-style: none;
+        .footerLink {
+          padding: 0;
+          border-bottom: none;
+          display: flex;
+          color: #303030;
+          text-decoration: none;
+          .linkRoot {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            color: #303030;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+#product-features #product-description .description--specification {
+  @media only screen and (max-width: $screenBreakPoint) {
+    margin-top: 20px;
+  }
+}
+
+#productFeatures > * + .descriptionRoot:not(#productDescription) {
+  margin-top: 0;
+}
+
+#productDescription {
+  margin-top: 80px;
+}

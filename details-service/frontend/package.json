@@ -1,0 +1,26 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha --require ignore-styles --require @babel/register ./tests --recursive",
+    "build": "cp ./src/fonts/* ./build/staging/fonts/ && cp ./src/images/* ./build/staging/images/ && cp ./src/styles/app.scss ./build/staging/styles/ && webpack --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.3.0",
+    "@types/enzyme": "^3.10.11",
+    "@types/jest": "^27.4.0",
+    "@types/mocha": "^9.0.0",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@types/sinon": "^10.0.6",
+    "webpack-cli": "^4.9.1"
+  }
+}
